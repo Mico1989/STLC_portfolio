@@ -1,4 +1,5 @@
-#Requirements: GroceryMate
+# Requirements: GroceryMate
+
 ## **The software**
 
 You will test a webshop, which can be found here: [https://grocerymate.masterschool.com/](https://grocerymate.masterschool.com/)
@@ -64,3 +65,5 @@ Free shipping for orders above a certain amount. Orders below this amount will i
 - If the **order total drops below the threshold** (e.g., by removing an item), the system must:
 -   **Reapply the shipping fee** and update the total price.
 -   **Display a notification** informing the user of the change.
+- 
+
