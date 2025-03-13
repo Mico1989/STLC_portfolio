@@ -11,6 +11,6 @@ As a user of GroceryMate, I want to purchase a product but I'm blocked due to th
 
 ---
 
-📝 **Bug Summary:**  
+ **Bug Summary:**  
 Expiration field incorrectly requires 7 or more characters, even though `MM/YY` is a valid format.  
 Validation message: "Please lengthen this text to 7 characters or more (you are currently using 5 characters)."
