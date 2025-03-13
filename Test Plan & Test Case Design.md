@@ -381,8 +381,8 @@ The webshop allows users to:
 | Test Case ID | Feature          | Reason for Automation                                      |
 |-------------|------------------|------------------------------------------------------------|
 | TC-001      | Product Rating    | Frequently executed, ideal for regression testing         |
-| TC-005      | Product Rating    | Edge case scenario, prevents duplicate ratings            |
-| TC-002      | Age Verification  | Compliance testing, needs consistency                     |
+| TC-002      | Product Rating    | Edge case scenario, prevents duplicate ratings            |
+| TC-003      | Age Verification  | Compliance testing, needs consistency                     |
 | TC-004      | Age Verification  | Common user mistake, automating saves manual effort      |
-| TC-003      | Shipping Cost     | Affects user experience, must always work correctly       |
-| TC-005      | Shipping Cost     | Price calculations are error-prone, automation ensures accuracy |
+| TC-005      | Shipping Cost     | Affects user experience, must always work correctly       |
+| TC-006      | Shipping Cost     | Price calculations are error-prone, automation ensures accuracy |
