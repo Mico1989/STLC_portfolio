@@ -104,11 +104,11 @@ The webshop allows users to:
 
 ### **Test Logistics**
 
--   **Test Manager:** [Name]
+-   **Test Manager:** Alen Smith
     
--   **QA Engineers:** [Team Members]
+-   **QA Engineers:** Lucic Miroslav, Goran Kup, Alis Alie
     
--   **End Users (UAT):** [Designated Users]
+-   **End Users (UAT):** Designated users – UAT team from Sales department
     
 
 ----------
