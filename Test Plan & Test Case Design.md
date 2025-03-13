@@ -68,8 +68,6 @@ The webshop allows users to:
     
 -   GUI testing to ensure usability and UI consistency
     
--   API testing for backend interactions
-    
 -   Performance testing for checkout and review submission processes
     
 -   Security testing for age verification and rating submission
