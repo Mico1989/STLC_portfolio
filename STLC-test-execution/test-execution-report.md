@@ -16,9 +16,18 @@ https://grocerymate.masterschool.com/
 | TC_06        | Age verification – exactly 18 years | Passed | Age = 12.05.2007. System granted access to alcoholic products. |
 | TC_07        | Age verification – just under 18 (DOB: 13.05.2007) | Passed | System message: "You are underage. You can still browse the site, but you will not be able to view alcohol products." |
 | TC_07        | Access alcoholic products – user age above 18 (DOB: 12/05/2006) | Passed | User successfully accessed alcoholic products |
-| TC_009       | Leave Age field empty | Failed | System incorrectly returns "You are underage" instead of prompting user to enter date of birth. |
-| TC_010       | Invalid date format (e.g., 32/12/2006)    | Failed  | No validation for invalid date format. System assumes underage. |
-| TC_012       | Order value exactly meets free shipping threshold (20€) | Passed | Shipment cost correctly set to 0€, free shipping applied |
+| TC_09        | Leave Age field empty | Failed | System incorrectly returns "You are underage" instead of prompting user to enter date of birth. |
+| TC_10        | Invalid date format (e.g., 32/12/2006)   | Failed  | No validation for invalid date format. System assumes underage. |
+| TC_12        | Order value exactly meets free shipping threshold (20€) | Passed | Shipment cost correctly set to 0€, free shipping applied |
+| TC_13        | Order exactly at threshold (€20)        | Passed | No shipping cost applied – system correctly grants free shipping at exact threshold |
+| TC_014       | Order just below threshold (€19.99)     | Passed | Shipping fee correctly applied – system charges 5€ when order value is under the 20€ threshold |
+| TC_015       | Remove item after reaching free shipping | Passed | Shipping fee applied after removing item and refreshing cart – UI doesn't update fee immediately without refresh. |
+
+
+
+
+
+
 
 
 
