@@ -364,13 +364,7 @@ The webshop allows users to:
             
         -   **Expected Outcome:** Shipping free is applied again.
             
-5.  **Error Guessing**
-    
-    -   **Test Case:** Verify system behavior when a user applies a discount that lowers the order total below the free shipping threshold.
-        
-        -   **Input:** Order value = €25, user applies a €6 discount.
-            
-        -   **Expected Outcome:** Shipping free is applied again.
+
             
 
 
