@@ -36,12 +36,15 @@ def test_invalid_inputs(test_input):
         count_vowel_consonant_pairs(test_input)
 
 
-def test_large_inputs():
-    input1 = "a" * 1000 + "b" * 1000  # (1000 samoglasnika + 1000 suglasnika)
-    assert count_vowel_consonant_pairs(input1) == 1  # Samo jedan par na prelazu
+@pytest.mark.parametrize("test_input, expected_result", [
+    ("a" * 1000 + "b" * 1000, 1),
+    ("ab" * 1000, 1000),
+    ("a1e2i3o4u" * 10000, "int"),  # Ovdje ne testiraš konkretnu vrijednost već tip
+])
+def test_large_inputs(test_input, expected_result):
+    result = count_vowel_consonant_pairs(test_input)
+    if expected_result == "int":
+        assert isinstance(result, int)
+    else:
+        assert result == expected_result
 
-    input2 = "ab" * 1000
-    assert count_vowel_consonant_pairs(input2) == 1000  # 1000 parova
-
-    input3 = "a1e2i3o4u" * 10000
-    assert isinstance(count_vowel_consonant_pairs(input3), int)  # Samo da vrati broj
