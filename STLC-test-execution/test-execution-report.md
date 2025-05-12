@@ -11,9 +11,24 @@ https://grocerymate.masterschool.com/
 | TC_001       | Submitting valid product rating (4 stars) | Passed | Rating successfully saved and visible   |
 | TC_02        | Submitting lowest valid rating (1 star)   | Passed | Rating saved and displayed correctly    |
 | TC_03        | Submitting highest valid rating (5 stars) | Passed | Rating submitted and displayed correctly |
-| TC_004       | Submit rating without selecting any stars (no rating input) | Passed | System returned: "Invalid input for the field 'Rating'. Please check your input." |
-| TC_005       | Submit multiple ratings for same product | Passed | System allows editing an existing rating via “Edit Review” modal. New rating successfully replaces the previous one. |
-| TC_006       | Age verification – exactly 18 years | Passed | Age = 12.05.2007. System granted access to alcoholic products. |
+| TC_04        | Submit rating without selecting any stars (no rating input) | Passed | System returned: "Invalid input for the field 'Rating'. Please check your input." |
+| TC_05        | Submit multiple ratings for same product | Passed | System allows editing an existing rating via “Edit Review” modal. New rating successfully replaces the previous one. |
+| TC_06        | Age verification – exactly 18 years | Passed | Age = 12.05.2007. System granted access to alcoholic products. |
+| TC_07        | Age verification – just under 18 (DOB: 13.05.2007) | Passed | System message: "You are underage. You can still browse the site, but you will not be able to view alcohol products." |
+| TC_07        | Access alcoholic products – user age above 18 (DOB: 12/05/2006) | Passed | User successfully accessed alcoholic products |
+| TC_009       | Leave Age field empty | Failed | System incorrectly returns "You are underage" instead of prompting user to enter date of birth. |
+| TC_010       | Invalid date format (e.g., 32/12/2006)    | Failed  | No validation for invalid date format. System assumes underage. |
+| TC_012       | Order value exactly meets free shipping threshold (20€) | Passed | Shipment cost correctly set to 0€, free shipping applied |
+
+
+
+
+
+
+
+
+
+
 
 
 
