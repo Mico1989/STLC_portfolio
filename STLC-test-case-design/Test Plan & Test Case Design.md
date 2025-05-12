@@ -336,7 +336,7 @@ The webshop allows users to:
     
     -   **Test Case:** Verify that orders above the free shipping threshold do not incur a shipping fee.
         
-        -   **Input:** Order value = $21 (free shipping threshold is $20)
+        -   **Input:** Order value = €21 (free shipping threshold is €20)
             
         -   **Expected Outcome:** No shipping cost applied.
             
@@ -344,7 +344,7 @@ The webshop allows users to:
     
     -   **Test Case:** Verify that an order exactly at the free shipping threshold gets free shipping.
         
-        -   **Input:** Order value = $20
+        -   **Input:** Order value = €20
             
         -   **Expected Outcome:** No shipping cost applied.
             
@@ -352,7 +352,7 @@ The webshop allows users to:
     
     -   **Test Case:** Verify that an order just below the threshold incurs a shipping fee.
         
-        -   **Input:** Order value = $19.99 (free shipping threshold is $20)
+        -   **Input:** Order value = €19.99 (free shipping threshold is €20)
             
         -   **Expected Outcome:** Shipping fee is applied.
             
@@ -360,7 +360,7 @@ The webshop allows users to:
     
     -   **Test Case:** Verify system behavior when a user removes items from the cart, causing the total to fall below the free shipping threshold.
         
-        -   **Input:** User initially adds $22 worth of products (free shipping applies), then removes an item worth $3.
+        -   **Input:** User initially adds €22 worth of products (free shipping applies), then removes an item worth $3.
             
         -   **Expected Outcome:** Shipping free is applied again.
             
@@ -368,7 +368,7 @@ The webshop allows users to:
     
     -   **Test Case:** Verify system behavior when a user applies a discount that lowers the order total below the free shipping threshold.
         
-        -   **Input:** Order value = $25, user applies a $6 discount.
+        -   **Input:** Order value = €25, user applies a €6 discount.
             
         -   **Expected Outcome:** Shipping free is applied again.
             
