@@ -1,9 +1,9 @@
 # XPath Task 2 – XPath Expressions 
 
-1. XPath for the highlighted icon/button given in the image below:  
+# 1. XPath for the highlighted icon/button given in the image below:  
     - `//img[@alt='logo']`
 
-2. The XPath of all input fields, sign in button, Create a new account link, and Go to Home link:
+# 2. The XPath of all input fields, sign in button, Create a new account link, and Go to Home link:
 
    - Email address field:  
      `//input[@type='email' and @placeholder='Email address']`
@@ -20,7 +20,7 @@
    - "Go to Home" link:  
      `//a[contains(@class, 'home-link') and text()='Go to Home']`
 
-3. The XPath (Create a new account) for all input fields, Sign Up button:
+# 3. The XPath (Create a new account) for all input fields, Sign Up button:
 
     
                     1. **XPath for the "Full Name" input field:**
@@ -38,4 +38,9 @@
                     4. **XPath for the "Sign Up" button:**
 
                             `//button[@type='submit' and text()='Sign Up']`
+
+
+# 4. The XPath of Confirm button
+
+   `//div[@class='modal-content']//button[text()='Confirm']`
 
