@@ -23,32 +23,32 @@
 # 3. The XPath (Create a new account) for all input fields, Sign Up button:
 
     
-                    1. **XPath for the "Full Name" input field:**
+                    - **XPath for the "Full Name" input field:**
 
                             `//input[@type='text' and @placeholder='Full Name']`
 
-                    2. **XPath for the "Email Address" input field:**
+                    - **XPath for the "Email Address" input field:**
 
                             `//input[@type='email' and @placeholder='Email address']`
 
-                    3. **XPath for the "Password" input field:**
+                    - **XPath for the "Password" input field:**
 
                             `//input[@type='password' and @placeholder='Password']`
 
-                    4. **XPath for the "Sign Up" button:**
+                    - **XPath for the "Sign Up" button:**
 
                             `//button[@type='submit' and text()='Sign Up']`
 
 
 # 4. The XPath of Confirm button
 
-   `//div[@class='modal-content']//button[text()='Confirm']`
+  - `//div[@class='modal-content']//button[text()='Confirm']`
 
 
 
 # 5.  The XPath for quantity input of Oranges, Add to cart button for Oranges, and add to wish list for Oranges
 
-    - Quantity Input Field:   //div[h3[text()='Oranges']]//input[@type='number']
+    - Quantity Input Field:   //div[h3[text()='Oranges']]//input[@type='number'] 
 
     - Add to Cart button:     //div[h3[text()='Oranges']]//button[contains(text(), 'Add to Cart')]
 
