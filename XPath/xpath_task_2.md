@@ -20,7 +20,7 @@
    - "Go to Home" link:  
      `//a[contains(@class, 'home-link') and text()='Go to Home']`
 
-3. The XPath (Create a new account) for all input fields, Sign Up button.
+3. The XPath (Create a new account) for all input fields, Sign Up button:
 
     
                     1. **XPath for the "Full Name" input field:**
