@@ -50,4 +50,7 @@
 
     - Quantity Input Field  :   //div[h3[text()='Oranges']]//input[@type='number']
 
+    - Add to Cart Field :       //div[h3[text()='Oranges']]//button[contains(text(), 'Add to Cart')]
+
+
 
