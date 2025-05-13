@@ -1,7 +1,7 @@
 # XPath Task 2 – XPath Expressions 
 
 1. XPath for the highlighted icon/button given in the image below:  
-   `//img[@alt='logo']`
+    - `//img[@alt='logo']`
 
 2. The XPath of all input fields, sign in button, Create a new account link, and Go to Home link:
 
