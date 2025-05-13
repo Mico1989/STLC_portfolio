@@ -22,4 +22,20 @@
 
 3. The XPath (Create a new account) for all input fields, Sign Up button.
 
+    
+                    1. **XPath for the "Full Name" input field:**
+
+                            `//input[@type='text' and @placeholder='Full Name']`
+
+                    2. **XPath for the "Email Address" input field:**
+
+                            `//input[@type='email' and @placeholder='Email address']`
+
+                    3. **XPath for the "Password" input field:**
+
+                            `//input[@type='password' and @placeholder='Password']`
+
+                    4. **XPath for the "Sign Up" button:**
+
+                            `//button[@type='submit' and text()='Sign Up']`
 
