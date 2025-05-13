@@ -1,4 +1,4 @@
-# XPath Task 2 – XPath Expressions
+# XPath Task 2 
 
 ## 1. XPath for the highlighted icon/button given in the image:
 - `//img[@alt='logo']`
