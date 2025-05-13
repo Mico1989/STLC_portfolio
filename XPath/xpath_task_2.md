@@ -48,7 +48,6 @@
 
 # 5.  The XPath for quantity input of Oranges, Add to cart button for Oranges, and add to wish list for Oranges
 
-    -  **Quantity Input Field:**  :   
-//div[h3[text()='Oranges']]//input[@type='number']
+    - Quantity Input Field  :   //div[h3[text()='Oranges']]//input[@type='number']
 
 
