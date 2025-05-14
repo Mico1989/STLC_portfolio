@@ -49,14 +49,14 @@ This creates confusion for users. Empty field is not validated and leads to inco
 
 ## 🐞 Bug Report: Invalid date format is not handled
 
-**Priority:** Medium
-**Reporter:** Lucic Miroslav
-**Date:** 14-05-2025
+**Priority:** Medium  
+**Reporter:** Lucic Miroslav  
+**Date:** 14-05-2025  
 
-**Environment:** Test
-**Application:** GroceryMate Webshop
-**Page:** Age Verification Modal
-**Browser / OS:** Chrome / Windows 10
+**Environment:** Test  
+**Application:** GroceryMate Webshop  
+**Page:** Age Verification Modal  
+**Browser / OS:** Chrome / Windows 10  
 
 ### Steps to Reproduce:
 
