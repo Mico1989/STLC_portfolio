@@ -32,7 +32,11 @@ System shows the message:
 
 ### 📎 Attachments:
 
-*(Insert screenshot here if available)*
+![image](https://github.com/user-attachments/assets/a4585e0e-2b22-4696-beec-5901a03cb0c3)
+![image](https://github.com/user-attachments/assets/57ebb03d-4ac6-4a49-9460-b6e90e5e53aa)
+
+
+
 
 ### ℹ️ Additional Info:
 
