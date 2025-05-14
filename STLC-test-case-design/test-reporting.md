@@ -1,104 +1,80 @@
 
-##  Bug Report
+## 🐞 Bug Report: Age field left empty is not validated
 
-### Title:
-System returns incorrect validation when Age field is left empty
+**Priority:** Medium
+**Reporter:** Lucic Miroslav
+**Date:** 14-05-2025
 
-### Priority:
-Medium
-
-### Reporter:
-Lucic Miroslav
-
-### Date:
-14-05-2025
-
-### Environment:
-Test
-
-### Application:
-GroceryMate Webshop
-
-### Page:
-Age Verification Modal
-
-### Browser / Operating System:
-Chrome / Windows 10
+**Environment:** Test
+**Application:** GroceryMate Webshop
+**Page:** Age Verification Modal
+**Browser / OS:** Chrome / Windows 10
 
 ### Steps to Reproduce:
+
 1. Open the GroceryMate webshop.
 2. Add an alcoholic product to the cart.
 3. Proceed to checkout.
-4. Wait for the age verification modal to appear.
-5. Do **not** enter any date into the Date of Birth field.
+4. Wait for the age verification modal.
+5. Leave the Date of Birth field empty.
 6. Click the **Confirm** button.
 
-### Expected Result:
-System should display an error message like:  
+### ✅ Expected Result:
+
+System should show an error message:
 `"Please enter your date of birth."`
 
-### Actual Result:
-System incorrectly returns the message:  
-`"You are underage"`  
-—even though no date was entered.
+### ❌ Actual Result:
 
-### Screenshots / Attachments:
-* (Insert screenshot showing the modal and error message here, if available)
+System shows the message:
+`"You are underage"`
+—even though no birth date was entered.
 
-### Additional Information:
-This bug can confuse users by falsely indicating they are underage, even if they never entered a birth date. Proper validation for empty input is missing.
+### 📎 Attachments:
 
+*(Insert screenshot here if available)*
 
+### ℹ️ Additional Info:
 
+This creates confusion for users. Empty field is not validated and leads to incorrect assumption.
 
+---
 
+## 🐞 Bug Report: Invalid date format is not handled
 
-##  Bug Report
+**Priority:** High
+**Reporter:** Lucic Miroslav
+**Date:** 14-05-2025
 
-### Title:
-Invalid Date Format Not Handled – System incorrectly assumes underage
-
-### Priority:
-High
-
-### Reporter:
-Lucic Miroslav
-
-### Date:
-14-05-2025
-
-### Environment:
-Test
-
-### Application:
-GroceryMate Webshop
-
-### Page:
-Age Verification Modal
-
-### Browser / Operating System:
-Chrome / Windows 10
+**Environment:** Test
+**Application:** GroceryMate Webshop
+**Page:** Age Verification Modal
+**Browser / OS:** Chrome / Windows 10
 
 ### Steps to Reproduce:
+
 1. Open the GroceryMate webshop.
 2. Add an alcoholic product to the cart.
-3. Wait for the age verification modal to appear.
-4. Enter an invalid date format in the input field, e.g. `32/12/2006`.
+3. Wait for the age verification modal.
+4. Enter an invalid date like `32/12/2006`.
 5. Click the **Confirm** button.
 
-### Expected Result:
-System should display an error like:  
-`"Invalid date format. Please use DD/MM/YYYY."`  
-and not proceed with verification.
+### ✅ Expected Result:
 
-### Actual Result:
-System assumes user is underage and displays the message:  
+System should validate and show error:
+`"Invalid date format. Please use DD/MM/YYYY."`
+
+### ❌ Actual Result:
+
+System accepts the invalid date and shows message:
 `"You are underage"`
 
-### Screenshots / Attachments:
-* (Insert screenshot showing invalid input and resulting message)
+### 📎 Attachments:
 
-### Additional Information:
-There is no validation for invalid or impossible dates. This leads to false negatives for age eligibility and may block valid users who mistype their birth date.
+*(Insert screenshot if available)*
+
+### ℹ️ Additional Info:
+
+Missing validation for date format leads to false rejection of eligible users.
 
 
