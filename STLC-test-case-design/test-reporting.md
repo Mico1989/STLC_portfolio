@@ -38,11 +38,14 @@ System shows the message:
 
 This creates confusion for users. Empty field is not validated and leads to incorrect assumption.
 
----
+--------------------------------------
+
+
+
 
 ## 🐞 Bug Report: Invalid date format is not handled
 
-**Priority:** High
+**Priority:** Medium
 **Reporter:** Lucic Miroslav
 **Date:** 14-05-2025
 
