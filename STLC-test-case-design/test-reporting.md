@@ -78,7 +78,10 @@ System accepts the invalid date and shows message:
 
 ### 📎 Attachments:
 
-*(Insert screenshot if available)*
+![image](https://github.com/user-attachments/assets/c3bb3b4a-90dc-4e23-8e74-041f11e9ef3b)
+![image](https://github.com/user-attachments/assets/252f261d-4135-4a7c-b9a6-1a991ad76941)
+
+
 
 ### ℹ️ Additional Info:
 
