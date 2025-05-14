@@ -1,14 +1,14 @@
 
 ## 🐞 Bug Report: Age field left empty is not validated
 
-**Priority:** Medium
-**Reporter:** Lucic Miroslav
-**Date:** 14-05-2025
+**Priority:** Medium  
+**Reporter:** Lucic Miroslav  
+**Date:** 14-05-2025  
 
-**Environment:** Test
-**Application:** GroceryMate Webshop
-**Page:** Age Verification Modal
-**Browser / OS:** Chrome / Windows 10
+**Environment:** Test  
+**Application:** GroceryMate Webshop  
+**Page:** Age Verification Modal  
+**Browser / OS:** Chrome / Windows 10  
 
 ### Steps to Reproduce:
 
