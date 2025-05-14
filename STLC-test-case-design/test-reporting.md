@@ -1,5 +1,3 @@
-## Scenario 1:
-
 
 ##  Bug Report
 
@@ -54,7 +52,6 @@ This bug can confuse users by falsely indicating they are underage, even if they
 
 
 
-## Scenario 2:
 
 ##  Bug Report
 
