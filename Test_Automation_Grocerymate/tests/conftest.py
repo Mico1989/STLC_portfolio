@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.login_page import LoginPage
 from pages.checkout_page import CheckoutPage
+from config import AUTH_URL, TEST_USER_CREDENTIALS, TEST_CHECKOUT_DATA, TEST_DOB, DEFAULT_TIMEOUT, SHORT_TIMEOUT, STORE_URL
 
 
 @pytest.fixture(scope="function")
@@ -20,44 +21,45 @@ def driver():
 
 @pytest.fixture(scope="function")
 def purchase_product_once(driver):
-    driver.get("https://grocerymate.masterschool.com/auth")
+    driver.get(AUTH_URL)
 
-    LoginPage(driver).login("lucicmiroslav1989@gmail.com", "Mico5566")
+    LoginPage(driver).login(TEST_USER_CREDENTIALS["email"], TEST_USER_CREDENTIALS["password"])
 
-    WebDriverWait(driver, 10).until(
+    WebDriverWait(driver, DEFAULT_TIMEOUT).until(
         EC.element_to_be_clickable((By.XPATH, "//a[@href='/store']"))
     ).click()
 
     try:
-        WebDriverWait(driver, 5).until(
+        WebDriverWait(driver, SHORT_TIMEOUT).until(
             EC.presence_of_element_located((By.XPATH, "//input[@placeholder='DD-MM-YYYY']"))
-        ).send_keys("01-01-2000")
-        WebDriverWait(driver, 5).until(
+        ).send_keys(TEST_DOB)
+        WebDriverWait(driver, SHORT_TIMEOUT).until(
             EC.element_to_be_clickable((By.XPATH, "//button[text()='Confirm']"))
         ).click()
     except Exception:
         print("🟡 Date of birth was not requested.")
 
-    WebDriverWait(driver, 10).until(
+    WebDriverWait(driver, DEFAULT_TIMEOUT).until(
         EC.element_to_be_clickable((By.XPATH, "//img[@alt='Gala Apples']/ancestor::div[@class='card']//button[contains(text(), 'Add to Cart')]"))
     ).click()
 
-    WebDriverWait(driver, 10).until(
+    WebDriverWait(driver, DEFAULT_TIMEOUT).until(
         EC.element_to_be_clickable((By.XPATH, "(//div[@class='headerIcon'])[3]"))
     ).click()
 
     checkout = CheckoutPage(driver)
     checkout.enter_checkout_details(
-        street="Test ulica 1",
-        city="Testgrad",
-        zip_code="75000",
-        card_number="4111111111111111",
-        name_on_card="Miroslav Lucic",
-        expiry="10/2028",
-        cvc="123"
+        street=TEST_CHECKOUT_DATA["street"],
+        city=TEST_CHECKOUT_DATA["city"],
+        zip_code=TEST_CHECKOUT_DATA["postcode"],
+        card_number=TEST_CHECKOUT_DATA["card_number"],
+        name_on_card=TEST_CHECKOUT_DATA["card_name"],
+        expiry=TEST_CHECKOUT_DATA["card_expiry"],
+        cvc=TEST_CHECKOUT_DATA["card_cvc"]
     )
+
     checkout.click_buy_now()
 
     print("✅ The product was purchased ONCE for all tests.")
     time.sleep(3)
-    driver.get("https://grocerymate.masterschool.com/store")
+    driver.get(STORE_URL)

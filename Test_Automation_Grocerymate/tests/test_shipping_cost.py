@@ -1,70 +1,72 @@
-
 import pytest
-import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.login_page import LoginPage
 from pages.checkout_page import CheckoutPage
 from helpers.cart_utils import clear_cart, add_items_to_cart, open_shop_and_handle_dob
+from config import AUTH_URL, STORE_URL, CHECKOUT_URL, TEST_PRODUCTS, TEST_USER_CREDENTIALS
 
-#  Shipping Cost Test Cases (1st, 2nd, 3rd)
+# 1️⃣ Shipping Test Cases (1., 2., 3.)
 @pytest.mark.parametrize("product_name, quantity, expected_shipping", [
-    ("Gala Apples", 9, "5€"),
-    ("Gala Apples", 10, "0€"),
-    ("Gala Apples", 11, "0€")
+    (TEST_PRODUCTS["shipping_product"], 9, "5€"),
+    (TEST_PRODUCTS["shipping_product"], 10, "0€"),
+    (TEST_PRODUCTS["shipping_product"], 11, "0€")
 ])
 def test_shipping_threshold(driver, product_name, quantity, expected_shipping):
-    driver.get("https://grocerymate.masterschool.com/auth")
+    driver.get(AUTH_URL)
 
     login_page = LoginPage(driver)
-    login_page.login("lucicmiroslav1989@gmail.com", "Mico5566")
+    login_page.login(TEST_USER_CREDENTIALS["email"], TEST_USER_CREDENTIALS["password"])
 
     open_shop_and_handle_dob(driver)
     clear_cart(driver)
-    driver.get("https://grocerymate.masterschool.com/store")
+    driver.get(STORE_URL)
     add_items_to_cart(driver, product_name, quantity)
 
-    driver.get("https://grocerymate.masterschool.com/checkout")
-    driver.refresh()
+    driver.get(CHECKOUT_URL)
+
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'shipment-container')]"))
+    )
 
     checkout_page = CheckoutPage(driver)
     actual_shipping = checkout_page.get_shipping_cost()
+
     assert actual_shipping == expected_shipping
 
-# 4th Shipping Cost Test Case: Verify system behavior when a user removes items from the cart,
-# causing the total to fall below the free shipping threshold.
+# 2️⃣ 4th Test Case – Smanjivanje količine ispod granice za besplatnu dostavu
 def test_shipping_becomes_paid_after_removing_item(driver):
-    driver.get("https://grocerymate.masterschool.com/auth")
+    driver.get(AUTH_URL)
 
-    LoginPage(driver).login("lucicmiroslav1989@gmail.com", "Mico5566")
-
+    LoginPage(driver).login(TEST_USER_CREDENTIALS["email"], TEST_USER_CREDENTIALS["password"])
     open_shop_and_handle_dob(driver)
-
     clear_cart(driver)
+    driver.get(STORE_URL)
 
-    driver.get("https://grocerymate.masterschool.com/store")
+    # Dodaj 21 proizvod
+    add_items_to_cart(driver, product_name=TEST_PRODUCTS["cheap_product"], quantity=21)
 
-    # Add 21 Items (Kale - 1€)
-    add_items_to_cart(driver, product_name="Kale", quantity=21)
-    time.sleep(2)
+    driver.get(CHECKOUT_URL)
 
-    driver.get("https://grocerymate.masterschool.com/checkout")
+    # Sačekaj da se učita shipping info prije nego klikneš minus
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'shipment-container')]"))
+    )
+
     checkout_page = CheckoutPage(driver)
-    time.sleep(2)
-
-    #Click the minus button twice to reduce the quantity to 19
 
     checkout_page.click_minus_button_multiple_times(2)
-    time.sleep(2)
 
-    # 7. Refresh + take shipping info
+    # Pričekaj da se shipping info promijeni
+    WebDriverWait(driver, 10).until(
+        EC.text_to_be_present_in_element(
+            (By.XPATH, "//div[contains(@class, 'shipment-container')]"), "€"
+        )
+    )
+
     shipping_text = checkout_page.get_updated_shipping_after_refresh()
     print(f"[INFO] Shipping cost after decreasing quantity: '{shipping_text}'")
 
-    #  The shipping is expected to no longer be free
     assert "0" not in shipping_text and "free" not in shipping_text.lower(), \
         "❌ Shipping is still free after reducing the total below the threshold."
-
-
-

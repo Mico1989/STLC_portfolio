@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from helpers.cart_utils import open_shop_and_handle_dob
+from config import STORE_URL
 
 
 class RatingPage:
@@ -9,7 +10,7 @@ class RatingPage:
         self.driver = driver
 
     def open_product_from_shop(self, product_name):
-        self.driver.get("https://grocerymate.masterschool.com/store")
+        self.driver.get(STORE_URL)
         open_shop_and_handle_dob(self.driver)
 
         #WebDriverWait(self.driver, 10).until(
@@ -36,7 +37,7 @@ class RatingPage:
             print("✅ Alert accepted – review deleted.")
         except:
             print("ℹ️ No review to delete or alert was not displayed.")
-
+##
     def rate_product(self, stars):
         xpath = f"//div[@class='interactive-rating']//span[contains(@class, 'star')][{stars}]"
         WebDriverWait(self.driver, 10).until(

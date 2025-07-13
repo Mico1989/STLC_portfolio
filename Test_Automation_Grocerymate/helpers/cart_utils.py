@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.shop_page import ShopPage
-
+from config import AUTH_URL, STORE_URL, CHECKOUT_URL, TEST_DOB
 
 def open_shop_and_handle_dob(driver):
     shop_page = ShopPage(driver)
@@ -13,7 +13,7 @@ def open_shop_and_handle_dob(driver):
         shop_page.enter_date_of_birth("10-10-1990")
         shop_page.submit_age_verification()
         time.sleep(3)  # Poželjno da sačekamo redirekciju
-        driver.get("https://grocerymate.masterschool.com/store")  # Ručno vratimo shop
+        driver.get(STORE_URL)  # Ručno vratimo shop
         time.sleep(3)
     except:
         print("ℹ️ The Date of Birth modal did not appear.")
@@ -32,7 +32,7 @@ def add_items_to_cart(driver, product_name, quantity):
 
 
 def clear_cart(driver):
-    driver.get("https://grocerymate.masterschool.com/checkout")
+    driver.get(CHECKOUT_URL)
     try:
         while True:
             remove_btn = WebDriverWait(driver, 3).until(
@@ -48,7 +48,7 @@ from pages.checkout_page import CheckoutPage
 from pages.login_page import LoginPage
 
 def buy_product(driver, product_name):
-    driver.get("https://grocerymate.masterschool.com/auth")
+    driver.get(AUTH_URL)
 
     # Login
     login = LoginPage(driver)
@@ -61,7 +61,7 @@ def buy_product(driver, product_name):
     add_items_to_cart(driver, product_name, quantity=1)
 
     # Go to Checkout
-    driver.get("https://grocerymate.masterschool.com/checkout")
+    driver.get(CHECKOUT_URL)
     driver.refresh()
 
     # Fill in the required information and click "Buy now"
@@ -81,7 +81,7 @@ def buy_product(driver, product_name):
 
 def ensure_product_purchased(driver, product_name):
     # Navigate to the Shop and verify if the "Rate this product" button is displayed
-    driver.get("https://grocerymate.masterschool.com/store")
+    driver.get(STORE_URL)
     open_shop_and_handle_dob(driver)
 
     try:
@@ -103,7 +103,7 @@ def ensure_product_purchased(driver, product_name):
 def go_to_product_detail(driver, product_name):
 # Navigates to the Store page, handles AGE modal if present, and opens the product detail page for the given product name.
 
-    driver.get("https://grocerymate.masterschool.com/store")
+    driver.get(STORE_URL)
     open_shop_and_handle_dob(driver)
 
     WebDriverWait(driver, 10).until(
