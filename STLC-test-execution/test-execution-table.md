@@ -45,7 +45,10 @@
 | 10    | Locate the same product purchased and click on it | Product detail page opens with visible rating form                                          |                             | OK     | [https://grocerymate.masterschool.com/product/66b3a57b3fd5048eacb47990](https://grocerymate.masterschool.com/product/66b3a57b3fd5048eacb47990) |
 | 11    | Select 1 Star and Click on button "Send"          | No confirmation message appears. Message "You have already reviewed this product" is shown. | 1 Star                      | OK     |                                                                                                                                                |
 
+
 ***Scenario 3: User selects 5 stars and submits**
+
+
 
 | Steps | Action                                            | Expected outcome                                                                            | Test Data                   | OK/NOK | URL                                                                                                                                            |
 | ----- | ------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
