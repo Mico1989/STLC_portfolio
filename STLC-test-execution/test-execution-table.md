@@ -1,4 +1,6 @@
 **Scenario 1: User selects a rating of 4 stars and submits**
+
+
 | Steps | Action                                          | Expected outcome                                                                       | Test Data                   | OK/NOK | URL                                                                                                                                            |
 | ----- | ----------------------------------------------- | -------------------------------------------------------------------------------------- | --------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1     | Open Page                                       | Page appears                                                                           |                             | OK     | [https://grocerymate.masterschool.com/](https://grocerymate.masterschool.com/)                                                                 |
@@ -22,7 +24,10 @@
 | 12    | Click on "Shop" page                            | Shop page appears                                                                      |                             | OK     | [https://grocerymate.masterschool.com/store](https://grocerymate.masterschool.com/store)                                                       |
 | 13    | Click on purchased product                      | Product detail page appears with visible rating form                                   |                             | OK     | [https://grocerymate.masterschool.com/product/66b3a57b3fd5048eacb47990](https://grocerymate.masterschool.com/product/66b3a57b3fd5048eacb47990) |
 | 14    | Select 4 stars and click "Send"                 | Message appears: "You have already reviewed this product.", no new review is submitted |                             | OK     |                                                                                                                                                |
+
+
 **Scenario 2: Verify behavior when the user tries to submit the lowest valid rating (1 star)**
+
 
 
 | Steps | Action                                            | Expected outcome                                                                            | Test Data                   | OK/NOK | URL                                                                                                                                            |
