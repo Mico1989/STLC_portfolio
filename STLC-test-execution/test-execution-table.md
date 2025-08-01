@@ -175,4 +175,8 @@
 | 4     | Click “Confirm”                       | Message appears: "You are underage. You can still browse the site, but you will not be able to view alcohol products." |            | OK     |                                                                                          |
 | 5     | Verify visibility of alcohol products | Alcohol products are not visible                                                                                       |            | OK     | [https://grocerymate.masterschool.com/store](https://grocerymate.masterschool.com/store) |
 
-**Scenario 11:  Verify that orders above the free shipping threshold do not incur a shipping fee
+
+**Scenario 11:  Verify that orders above the free shipping threshold do not incur a shipping fee**
+
+
+
