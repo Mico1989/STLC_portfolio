@@ -193,5 +193,20 @@
 
 **Scenario 11:  Verify that orders above the free shipping threshold do not incur a shipping fee**
 
+| Steps | Action                                              | Expected outcome                                                                            | Test Data                   | OK/NOK | URL                                                                                            |
+| ----- | --------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------- | ------ | ---------------------------------------------------------------------------------------------- |
+| 1     | Open Page                                           | Page appears                                                                                |                             | OK     | [https://grocerymate.masterschool.com/](https://grocerymate.masterschool.com/)                 |
+| 2     | Go to Login page                                    | Login page appears                                                                          |                             | OK     | [https://grocerymate.masterschool.com/auth](https://grocerymate.masterschool.com/auth)         |
+| 3a    | Fill in Email field                                 | Email field accepts input                                                                   | lucicmiroslav1989@gmail.com | OK     |                                                                                                |
+| 3b    | Fill in Password field                              | Password field accepts input                                                                | mico5566                    | OK     |                                                                                                |
+| 4     | Click "Sign in" button                              | User is successfully logged in                                                              |                             | OK     |                                                                                                |
+| 5     | Click on "Shop" page                                | Age Verification modal appears                                                              |                             | OK     |                                                                                                |
+| 6     | Enter valid date of birth                           | Date is accepted                                                                            | 10-03-1989                  | OK     |                                                                                                |
+| 7     | Click "Confirm"                                     | Modal closes and access to all products is granted, including alcohol                       |                             | OK     | [https://grocerymate.masterschool.com/store](https://grocerymate.masterschool.com/store)       |
+| 8     | Click the "Add to Cart" button on item "Nectarines" | Item added to a cart 14 times                                                               | Nectarines                  | OK     | [https://grocerymate.masterschool.com/store](https://grocerymate.masterschool.com/store)       |
+| 9     | Go to Cart page                                     | Cart page appears                                                                           |                             | OK     | [https://grocerymate.masterschool.com/checkout](https://grocerymate.masterschool.com/checkout) |
+| 10a   | Observe the shipping cost                           | Shipping cost is 0 € because order total (21 €) is above the free shipping threshold (20 €) | 14x Nectarines = 21 €       | OK     | [https://grocerymate.masterschool.com/checkout](https://grocerymate.masterschool.com/checkout) |
+                                                                                           |
+
 
 
