@@ -132,3 +132,47 @@
 
 
 **Scenario 7: Verify that a user just below 18 years old is denied access**
+
+| Steps | Action                                | Expected outcome                                                                                                       | Test Data  | OK/NOK | URL                                                                                      |
+| ----- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | ---------------------------------------------------------------------------------------- |
+| 1     | Open page                             | Home page appears                                                                                                      |            | OK     | [https://grocerymate.masterschool.com/](https://grocerymate.masterschool.com/)           |
+| 2     | Go to Shop page                       | Age verification modal appears                                                                                         |            | OK     |                                                                                          |
+| 3     | Enter date of birth                   | Input is accepted                                                                                                      | 02-08-2007 | OK     |                                                                                          |
+| 4     | Click “Confirm”                       | Message appears: “You are underage. You can still browse the site, but you will not be able to view alcohol products.” |            | OK     |                                                                                          |
+| 5     | Verify visibility of alcohol products | Alcohol products are not visible                                                                                       |            | OK     | [https://grocerymate.masterschool.com/store](https://grocerymate.masterschool.com/store) |
+
+
+**Scenario 8: Verify that users above 18 years old can access alcoholic products**
+
+
+| Steps | Action                                | Expected outcome                                                                                          | Test Data  | OK/NOK | URL                                                                                      |
+| ----- | ------------------------------------- | --------------------------------------------------------------------------------------------------------- | ---------- | ------ | ---------------------------------------------------------------------------------------- |
+| 1     | Open page                             | Home page appears                                                                                         |            | OK     | [https://grocerymate.masterschool.com/](https://grocerymate.masterschool.com/)           |
+| 2     | Go to Shop page                       | Age verification modal appears                                                                            |            | OK     |                                                                                          |
+| 3     | Enter date of birth                   | Input is accepted                                                                                         | 01-08-2006 | OK     |                                                                                          |
+| 4     | Click “Confirm”                       | Message appears: “You are of age. You can now view all products, even alcohol products.” Modal disappears |            | OK     |                                                                                          |
+| 5     | Verify visibility of alcohol products | Alcohol products are visible                                                                              |            | OK     | [https://grocerymate.masterschool.com/store](https://grocerymate.masterschool.com/store) |
+
+
+**Scenario 9:  Verify system behavior when Date of Birth field is left empty**
+
+| Steps | Action                                | Expected outcome                                  | Test Data | OK/NOK | URL                                                                                      |
+| ----- | ------------------------------------- | ------------------------------------------------- | --------- | ------ | ---------------------------------------------------------------------------------------- |
+| 1     | Open page                             | Home page appears                                 |           | OK     | [https://grocerymate.masterschool.com/](https://grocerymate.masterschool.com/)           |
+| 2     | Go to Shop page                       | Age verification modal appears                    |           | OK     |                                                                                          |
+| 3     | Leave Date of Birth field empty       | Field is empty                                    | Empty     | OK     |                                                                                          |
+| 4     | Click “Confirm”                       | Error message: "Please enter your date of birth." |           | NOK    |                                                                                          |
+| 5     | Verify visibility of alcohol products | Alcohol products are not visible                  |           | OK     | [https://grocerymate.masterschool.com/store](https://grocerymate.masterschool.com/store) |
+
+
+**Scenario 10: Verify system behavior when an invalid date format is entered**
+
+| Steps | Action                                | Expected outcome                                                                                                       | Test Data  | OK/NOK | URL                                                                                      |
+| ----- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | ---------------------------------------------------------------------------------------- |
+| 1     | Open page                             | Home page appears                                                                                                      |            | OK     | [https://grocerymate.masterschool.com/](https://grocerymate.masterschool.com/)           |
+| 2     | Go to Shop page                       | Age verification modal appears                                                                                         |            | OK     |                                                                                          |
+| 3     | Enter invalid date format             | Error message: "Invalid date format. Please use DD/MM/YYYY."                                                           | 32-12-2006 | NOK    |                                                                                          |
+| 4     | Click “Confirm”                       | Message appears: "You are underage. You can still browse the site, but you will not be able to view alcohol products." |            | OK     |                                                                                          |
+| 5     | Verify visibility of alcohol products | Alcohol products are not visible                                                                                       |            | OK     | [https://grocerymate.masterschool.com/store](https://grocerymate.masterschool.com/store) |
+
+**Scenario 11:  Verify that orders above the free shipping threshold do not incur a shipping fee
