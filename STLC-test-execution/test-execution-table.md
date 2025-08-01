@@ -23,8 +23,7 @@
 | 11    | Click "Buy now"                                 | Purchase is completed successfully                                                     |                             | OK     |                                                                                                                                                |
 | 12    | Click on "Shop" page                            | Shop page appears                                                                      |                             | OK     | [https://grocerymate.masterschool.com/store](https://grocerymate.masterschool.com/store)                                                       |
 | 13    | Click on purchased product                      | Product detail page appears with visible rating form                                   |                             | OK     | [https://grocerymate.masterschool.com/product/66b3a57b3fd5048eacb47990](https://grocerymate.masterschool.com/product/66b3a57b3fd5048eacb47990) |
-| 14    | Select 4 stars and click "Send"                 | Message appears: "You have already reviewed this product.", no new review is submitted |                             | OK     |                                                                                                                                                |
-
+| 14    | Select 4 stars and click "Send"                 | Message appears: "You have already reviewed this product.", no new review is submitted | 4 Stars                     | OK     |                                                                                                                                                |
 
 **Scenario 2: Verify behavior when the user tries to submit the lowest valid rating (1 star)**
 
