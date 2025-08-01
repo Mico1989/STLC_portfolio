@@ -117,3 +117,16 @@
 | 10    | Locate the same product purchased and click on it | Product detail page opens with visible rating form                                                    |                             | OK     | [https://grocerymate.masterschool.com/product/66b3a57b3fd5048eacb47990](https://grocerymate.masterschool.com/product/66b3a57b3fd5048eacb47990) |
 | 11    | Select 3 Stars and Click on button "Send"         | No confirmation message appears. Message "You have already reviewed this product" is shown.           | 3 Stars                     | OK     |                                                                                                                                                |
 | 12    | Observe the product page after rating submission  | Rating form is no longer visible. Message "You have already reviewed this product." remains displayed |                             | OK     |                                                                                                                                                |
+
+**Scenario 6: Verify that a user exactly 18 years old can access alcoholic products**
+
+| Steps | Action                                | Expected outcome                                                                                           | Test Data  | OK/NOK | URL                                                                                      |
+| ----- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------- | ------ | ---------------------------------------------------------------------------------------- |
+| 1     | Open page                             | Home page appears                                                                                          |            | OK     | [https://grocerymate.masterschool.com/](https://grocerymate.masterschool.com/)           |
+| 2     | Go to Shop page                       | Age verification modal appears                                                                             |            | OK     |                                                                                          |
+| 3     | Enter date of birth                   | Input is accepted                                                                                          | 01-08-2007 | OK     |                                                                                          |
+| 4     | Click “Confirm”                       | Message appears: “You are of age. You can now view all products, even alcohol products.” Modal disappears. |            | OK     |                                                                                          |
+| 5     | Verify visibility of alcohol products | All products are visible                                                                                   |            | OK     | [https://grocerymate.masterschool.com/store](https://grocerymate.masterschool.com/store) |
+
+
+**Scenario 7: Verify that a user just below 18 years old is denied access**
